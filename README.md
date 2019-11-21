@@ -18,6 +18,16 @@ or
 
 Get a token from Teamtailor. [See documentation here](https://docs.teamtailor.com/#authentication).
 
+```js
+// In your gatsby-config.js
+plugins: {
+  resolve: `gatsby-source-teamtailor2`,
+  options: {
+    accessToken: `YOUR_TOKEN_HERE`
+  }
+}
+```
+
 ## How to query
 
 You can query nodes created from Teamtailor using GraphQL lkike the following:
