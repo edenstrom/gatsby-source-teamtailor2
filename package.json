@@ -1,0 +1,32 @@
+{
+  "name": "gatsby-source-teamtailor2",
+  "author": "Jonathan Edenström <jonathan@edenstrom.io>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edenstrom/gatsby-source-teamtailor2/issues"
+  },
+  "homepage": "https://github.com/edenstrom/gatsby-source-teamtailor2",
+  "repository": "https://github.com/edenstrom/gatsby-source-teamtailor2",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "gatsby-source-plugin"
+  ],
+  "scripts": {
+    "start": "tsc -w",
+    "build": "tsc",
+    "develop": "nodemon gatsby-node.js"
+  },
+  "devDependencies": {
+    "@types/got": "^9.6.9",
+    "gatsby": "^2.18.1",
+    "nodemon": "^2.0.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "gatsby-node-helpers": "^0.3.0",
+    "got": "^9.6.0"
+  }
+}
