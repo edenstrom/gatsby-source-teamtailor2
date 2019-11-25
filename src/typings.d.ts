@@ -41,3 +41,21 @@ declare module 'gatsby-node-helpers' {
     generateTypeName: typeof createNodeFactory;
   };
 }
+
+declare module 'rehype-parse' {
+  import { Plugin } from 'unified';
+  export type RehypeParseSettings = {
+    fragment?: boolean;
+    space?: 'svg' | 'html';
+    emitParseErrors?: boolean;
+    verbose?: boolean;
+  };
+  const RehypeParse: Plugin<any[], RehypeParseSettings>;
+  export default RehypeParse;
+}
+
+declare module 'rehype-remark' {
+  import { Plugin } from 'unified';
+  const RehypeRemark: Plugin;
+  export default RehypeRemark;
+}

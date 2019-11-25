@@ -1,4 +1,5 @@
 import createNodeHelpers from 'gatsby-node-helpers';
+import { convertHtmlToAst, convertHtmlToMarkdown } from './convertHtml';
 import {
   Department,
   Job,
@@ -23,6 +24,8 @@ export const JobNode = createNodeFactory<Job>(JOB_TYPE, node => {
 
   return {
     ...merged,
+    bodyMarkdown: convertHtmlToMarkdown(merged.body),
+    bodyAst: convertHtmlToAst(merged.body),
     user___NODE: generateNodeId(USER_TYPE, merged.relationships.user.data.id),
     department___NODE: generateNodeId(
       DEPARTMENT_TYPE,

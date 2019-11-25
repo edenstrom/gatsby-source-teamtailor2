@@ -1,4 +1,4 @@
-import { SourceNodesArgs } from 'gatsby';
+import { CreateSchemaCustomizationArgs, SourceNodesArgs } from 'gatsby';
 import { TeamtailorClient } from './api';
 import {
   DepartmentNode,
@@ -51,4 +51,18 @@ exports.sourceNodes = async (
   });
 
   return;
+};
+
+exports.createSchemaCustomization = ({
+  actions,
+}: CreateSchemaCustomizationArgs) => {
+  const { createTypes } = actions;
+
+  const typeDefs = `
+    type TeamtailorJob implements Node {
+      bodyAst: JSON!
+    }
+  `;
+
+  createTypes(typeDefs);
 };

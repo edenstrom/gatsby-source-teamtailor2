@@ -27,6 +27,10 @@
   },
   "dependencies": {
     "gatsby-node-helpers": "^0.3.0",
-    "got": "^9.6.0"
+    "got": "^9.6.0",
+    "rehype-parse": "^6.0.2",
+    "rehype-remark": "^7.0.0",
+    "remark-stringify": "^7.0.4",
+    "unified": "^8.4.2"
   }
 }
