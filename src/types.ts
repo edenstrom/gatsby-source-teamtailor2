@@ -65,7 +65,7 @@ export interface JobRelationships {
 
 export interface Relationship<T = RelationshipData> {
   links: RelationshipLinks;
-  data: T;
+  data: T | null;
 }
 
 export interface RelationshipLinks {

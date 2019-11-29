@@ -26,12 +26,15 @@ export const JobNode = createNodeFactory<Job>(JOB_TYPE, node => {
     ...merged,
     bodyMarkdown: convertHtmlToMarkdown(merged.body),
     bodyAst: convertHtmlToAst(merged.body),
-    user___NODE: generateNodeId(USER_TYPE, merged.relationships.user.data.id),
+    user___NODE: generateNodeId(
+      USER_TYPE,
+      merged.relationships.user.data?.id ?? ''
+    ),
     department___NODE: generateNodeId(
       DEPARTMENT_TYPE,
-      merged.relationships.department.data.id
+      merged.relationships.department.data?.id ?? ''
     ),
-    locations___NODE: merged.relationships.locations.data.map(d =>
+    locations___NODE: merged.relationships.locations.data?.map(d =>
       generateNodeId(LOCATION_TYPE, d.id)
     ),
   };
