@@ -21,22 +21,20 @@ const LOCATION_TYPE = 'Location';
 
 export const JobNode = createNodeFactory<Job>(JOB_TYPE, node => {
   const merged = withMergedAttributes(node);
+  const { user, department, locations } = merged.relationships;
 
   return {
     ...merged,
     bodyMarkdown: convertHtmlToMarkdown(merged.body),
     bodyAst: convertHtmlToAst(merged.body),
-    user___NODE: generateNodeId(
-      USER_TYPE,
-      merged.relationships.user.data?.id ?? ''
-    ),
-    department___NODE: generateNodeId(
-      DEPARTMENT_TYPE,
-      merged.relationships.department.data?.id ?? ''
-    ),
-    locations___NODE: merged.relationships.locations.data?.map(d =>
-      generateNodeId(LOCATION_TYPE, d.id)
-    ),
+    user___NODE: user.data
+      ? generateNodeId(USER_TYPE, user.data.id ?? '')
+      : null,
+    department___NODE: department.data
+      ? generateNodeId(DEPARTMENT_TYPE, department.data.id)
+      : null,
+    locations___NODE:
+      locations.data?.map(d => generateNodeId(LOCATION_TYPE, d.id)) ?? [],
   };
 });
 export const DepartmentNode = createNodeFactory<Department>(
