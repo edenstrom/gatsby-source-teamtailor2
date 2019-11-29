@@ -1,7 +1,7 @@
 {
   "name": "gatsby-source-teamtailor2",
   "author": "Jonathan Edenström <jonathan@edenstrom.io>",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "license": "MIT",
   "bugs": {
