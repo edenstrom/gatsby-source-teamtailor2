@@ -30,7 +30,7 @@ export class TeamtailorClient {
 
       const body = response.body as JobsResponse;
 
-      return [body.data, body.included];
+      return [body.data ?? [], body.included ?? []];
     } catch (e) {
       console.error('ERROR');
       console.log(e);
