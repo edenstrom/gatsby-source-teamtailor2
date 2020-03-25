@@ -60,7 +60,38 @@ exports.createSchemaCustomization = ({
 
   const typeDefs = `
     type TeamtailorJob implements Node {
+      id: ID!
       bodyAst: JSON!
+      title: String
+      locations: [TeamtailorLocation!]!
+      links: [TeamtailorJobLink!]!
+      user: TeamtailorUser
+      department: TeamtailorDepartment
+    }
+
+    type TeamtailorLocation {
+      city: String
+    }
+
+    type TeamtailorDepartment {
+      name: String
+    }
+
+    type TeamtailorUser {
+      title: String!
+      name: String!
+      email: String!
+      hide_email: Boolean!
+      picture: TeamtailorUserPicture
+    }
+
+    type TeamtailorUserPicture {
+      standard: String
+    }
+
+    type TeamtailorJobLink {
+      careersite_job_url: String
+      careersite_job_apply_url: String
     }
   `;
 
