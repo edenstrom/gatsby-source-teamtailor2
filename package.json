@@ -21,15 +21,15 @@
   },
   "devDependencies": {
     "@types/got": "^9.6.9",
-    "gatsby": "^2.18.1",
-    "nodemon": "^2.0.0",
-    "typescript": "^3.7.2"
+    "gatsby": "^2.20.6",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "gatsby-node-helpers": "^0.3.0",
     "got": "^9.6.0",
     "rehype-parse": "^6.0.2",
-    "rehype-remark": "^7.0.0",
+    "rehype-remark": "^8.0.0",
     "remark-stringify": "^7.0.4",
     "unified": "^8.4.2"
   }
