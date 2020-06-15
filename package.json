@@ -20,12 +20,13 @@
     "develop": "nodemon gatsby-node.js"
   },
   "devDependencies": {
-    "@types/got": "^9.6.9",
-    "gatsby": "^2.20.6",
-    "nodemon": "^2.0.2",
-    "typescript": "^3.8.3"
+    "@types/got": "^9.6.11",
+    "gatsby": "2.22.12",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.5"
   },
   "dependencies": {
+    "@types/react-dom": "^16.9.8",
     "gatsby-node-helpers": "^0.3.0",
     "got": "^9.6.0",
     "rehype-parse": "^6.0.2",
