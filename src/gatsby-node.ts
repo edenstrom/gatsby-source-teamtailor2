@@ -32,7 +32,7 @@ exports.sourceNodes = async (
 
   if (!jobs) throw new Error('Failed to fetch jobs from Teamtailor');
 
-  included.forEach(include => {
+  included.forEach((include) => {
     switch (include.type) {
       case 'departments':
         return createNode(DepartmentNode(include));
@@ -45,7 +45,7 @@ exports.sourceNodes = async (
     }
   });
 
-  jobs.forEach(job => {
+  jobs.forEach((job) => {
     const node = JobNode(job);
     createNode(node);
   });
@@ -64,20 +64,23 @@ exports.createSchemaCustomization = ({
       bodyAst: JSON!
       title: String
       locations: [TeamtailorLocation!]!
-      links: [TeamtailorJobLink!]!
+      links: TeamtailorJobLink!
       user: TeamtailorUser
       department: TeamtailorDepartment
     }
 
-    type TeamtailorLocation {
+    type TeamtailorLocation implements Node {
+      id: ID!
       city: String
     }
 
-    type TeamtailorDepartment {
+    type TeamtailorDepartment implements Node {
+      id: ID!
       name: String
     }
 
-    type TeamtailorUser {
+    type TeamtailorUser implements Node {
+      id: ID!
       title: String!
       name: String!
       email: String!

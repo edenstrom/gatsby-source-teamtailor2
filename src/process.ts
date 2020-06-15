@@ -19,7 +19,7 @@ const DEPARTMENT_TYPE = 'Department';
 const ROLE_TYPE = 'Role';
 const LOCATION_TYPE = 'Location';
 
-export const JobNode = createNodeFactory<Job>(JOB_TYPE, node => {
+export const JobNode = createNodeFactory<Job>(JOB_TYPE, (node) => {
   const merged = withMergedAttributes(node);
   const { user, department, locations } = merged.relationships;
 
@@ -34,19 +34,19 @@ export const JobNode = createNodeFactory<Job>(JOB_TYPE, node => {
       ? generateNodeId(DEPARTMENT_TYPE, department.data.id)
       : null,
     locations___NODE:
-      locations.data?.map(d => generateNodeId(LOCATION_TYPE, d.id)) ?? [],
+      locations.data?.map((d) => generateNodeId(LOCATION_TYPE, d.id)) ?? [],
   };
 });
 export const DepartmentNode = createNodeFactory<Department>(
   DEPARTMENT_TYPE,
-  node => withMergedAttributes(node)
+  (node) => withMergedAttributes(node)
 );
-export const UserNode = createNodeFactory<User>(USER_TYPE, node =>
+export const UserNode = createNodeFactory<User>(USER_TYPE, (node) =>
   withMergedAttributes(node)
 );
-export const LocationNode = createNodeFactory<Location>(LOCATION_TYPE, node =>
+export const LocationNode = createNodeFactory<Location>(LOCATION_TYPE, (node) =>
   withMergedAttributes(node)
 );
-export const RoleNode = createNodeFactory<Role>(ROLE_TYPE, node =>
+export const RoleNode = createNodeFactory<Role>(ROLE_TYPE, (node) =>
   withMergedAttributes(node)
 );
