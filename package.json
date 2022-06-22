@@ -28,7 +28,7 @@
   "dependencies": {
     "@types/react-dom": "^16.9.8",
     "gatsby-node-helpers": "^0.3.0",
-    "got": "^9.6.0",
+    "got": "^11.8.5",
     "rehype-parse": "^6.0.2",
     "rehype-remark": "^8.0.0",
     "remark-stringify": "^7.0.4",
